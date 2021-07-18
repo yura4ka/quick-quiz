@@ -13,16 +13,21 @@ router.post('/login', async (req, res) => {
     try {
         const userData = req.body;
 
-        if (!userData.username)
-            return res.status(400).json({ message: 'There must be an username in the request' });
-        if (!userData.password)
-            return res.status(400).json({ message: 'There must be a password in the request' });
+        if (!userData.username) {
+            return res
+                .status(400)
+                .json({ message: 'There must be an username in the request' });
+        }
+        if (!userData.password) {
+            return res
+                .status(400)
+                .json({ message: 'There must be a password in the request' });
+        }
 
         const user = await User.findOne({ username: userData.username });
-        if (!user)
-            return res.status(400).json({ message: 'Wrong user data' });
+        if (!user) return res.status(400).json({ message: 'Wrong user data' });
 
-        if (! await bcrypt.compare(userData.password, user.password))
+        if (!(await bcrypt.compare(userData.password, user.password)))
             return res.status(400).json({ message: 'Wrong user data' });
 
         if (!user.isAdmin)

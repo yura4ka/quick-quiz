@@ -1,5 +1,5 @@
 async function sendRequest(method, url, isNeedAuth = false, body) {
-    return await new Promise(async (resolve) => {
+    return await new Promise(async resolve => {
         try {
             const headers = {};
             if (body) {
@@ -7,13 +7,16 @@ async function sendRequest(method, url, isNeedAuth = false, body) {
                 body = JSON.stringify(body);
             }
             if (isNeedAuth) {
-                headers['Authorization'] = 'Bearer ' + localStorage.getItem('Access-Token');
+                headers['Authorization'] =
+                    'Bearer ' + localStorage.getItem('Access-Token');
             }
             const response = await fetch(location.origin + '/' + url, {
-                method, headers, body,
+                method,
+                headers,
+                body,
             });
 
-            const json = await response?.json() || {};
+            const json = (await response?.json()) || {};
             resolve({ json, ok: response.ok, status: response.status });
         } catch (e) {
             console.error(e);
@@ -26,17 +29,19 @@ async function login(user) {
         const response = await fetch(location.origin + '/api/login', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user),
         });
 
         if (!response.ok) {
             return false;
         }
 
-        localStorage.setItem('Access-Token', response.headers.get('Access-Token'));
+        localStorage.setItem(
+            'Access-Token',
+            response.headers.get('Access-Token')
+        );
         return true;
-    }
-    catch (e) {
+    } catch (e) {
         console.error(e.message);
     }
 }
@@ -56,12 +61,15 @@ function changeUserStats(isCorrect) {
 }
 
 function getUserStats() {
-    return [localStorage.total_questions, localStorage.correct_answers, localStorage.wrong_answers];
+    return [
+        localStorage.total_questions,
+        localStorage.correct_answers,
+        localStorage.wrong_answers,
+    ];
 }
 
 async function checkAdmin() {
-    if (!localStorage.getItem('Access-Token'))
-        return false;
+    if (!localStorage.getItem('Access-Token')) return false;
 
     const response = await sendRequest('POST', 'api/check_admin', true);
     return response.ok;

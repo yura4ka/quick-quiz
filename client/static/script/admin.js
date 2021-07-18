@@ -4,9 +4,9 @@ const variants = document.getElementById('answers');
 
 let answersCount = 2;
 
-[...document.querySelectorAll('input[type=text]')].map(input => {
-    input.addEventListener('input', () => input.classList.remove('wrong'));
-});
+function onInput(element) {
+    element.classList.remove('wrong');
+}
 
 function fillAnswer(answer, index = answersCount, isClearText = true) {
     const radioButton = answer.querySelector('input[type=radio]');

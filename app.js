@@ -11,7 +11,6 @@ app.use('', require('./client/routes'));
 app.use('/api', require('./api/routes/base.routes'));
 app.use('/api', require('./api/routes/auth.routes'));
 
-
 async function main() {
     const PORT = config.get('port') || 3000;
     const HOSTNAME = config.get('hostname') || 'localhost';

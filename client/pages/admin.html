@@ -16,12 +16,12 @@
         <div id="answers">
             <p class="variant">
                 <input type="radio" id="answer_0" name="answer" value="0">
-                <label for="answer_0"><input type="text" placeholder="Answer" maxlength="30"></label>
+                <label for="answer_0"><input type="text" placeholder="Answer" maxlength="30" oninput="onInput(this)"></label>
                 <button disabled class="delete_answer" onclick="deleteAnswer(0)">x</button>
             </p>
             <p class="variant">
                 <input type="radio" id="answer_1" name="answer" value="1">
-                <label for="answer_1"><input type="text" placeholder="Answer" maxlength="30"></label>
+                <label for="answer_1"><input type="text" placeholder="Answer" maxlength="30" oninput="onInput(this)"></label>
                 <button disabled class="delete_answer" onclick="deleteAnswer(1)">x</button>
             </p>
 

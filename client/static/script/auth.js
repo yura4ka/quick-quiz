@@ -17,14 +17,13 @@ document.getElementById('login').onclick = async () => {
         return false;
     }
 
-    if (await login( { username: username.value, password: password.value }))
+    if (await login({ username: username.value, password: password.value }))
         return location.replace('/admin');
 
     username.classList.add('wrong');
     password.classList.add('wrong');
-}
+};
 
 window.onload = async () => {
-    if (await checkAdmin())
-        location.replace('/admin');
-}
+    if (await checkAdmin()) location.replace('/admin');
+};
