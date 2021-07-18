@@ -1,0 +1,33 @@
+{
+  "name": "quick-quiz",
+  "version": "1.0.0",
+  "description": "Quiz app made for js, node js, express practice",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "js",
+    "node js",
+    "quiz",
+    "express"
+  ],
+  "author": "Yurii Stetsiuk",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yura4ka/quick-quiz.git"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prettier": "2.3.2"
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quick Quiz</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+</head>
+<body>
+    <main>
+        <div id="question"></div>
+        <div id="answers">
+            <template id="answer_template">
+                <p class="variant">
+                    <input type="radio" id="answer_" name="answer" value="0" onclick="onAnswerClicked(this)">
+                    <label for="answer_"></label>
+                </p>
+            </template>
+        </div>
+        <button id="submit" disabled>Submit</button>
+    </main>
+    <script src="../static/script/base.js"></script>
+    <script src="../static/script/quiz.js"></script>
+</body>
+</html>

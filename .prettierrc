@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "tabWidth": 4,
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": ["*.json", "*.html"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

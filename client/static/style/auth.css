@@ -1,0 +1,24 @@
+#login {
+    margin-top: 3rem;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+
+input.login {
+    padding: 10px;
+    margin: 0.1rem 0 2rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 1.1rem;
+}
+
+label.login {
+    font-size: 1.2rem;
+}
+
+input.login:hover, input.login:focus {
+    border-bottom: 1px solid #3498db;
+}
+
+input.login:focus { border-bottom-width: 2px; }

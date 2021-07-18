@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick db setup</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+</head>
+<body>
+    <main>
+        <header>Quick db setup</header>
+        <div id="answers" style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;">
+            This will add to your db 1 admin user with password 1111 and 4 quizzes.
+        </div>
+        <button id="start">Add</button>
+    </main>
+
+    <script src="../static/script/base.js"></script>
+    <script>
+        const button = document.getElementById('start');
+        button.onclick = async() => {
+            button.disabled = true;
+            await sendRequest('POST', 'api/quick_setup');
+            location.replace(location.origin);
+        }
+    </script>
+</body>
+</html>

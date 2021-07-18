@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Quiz Admin</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+    <link rel="stylesheet" href="../static/style/admin.css">
+</head>
+<body>
+    <main>
+        <header>Quick Quiz Admin</header>
+        <h1>Add quiz</h1>
+        <label id="quiz_label">
+            <input type="text" id="quiz_question" maxlength="50" placeholder="Question">
+        </label>
+        <div id="answers">
+            <p class="variant">
+                <input type="radio" id="answer_0" name="answer" value="0">
+                <label for="answer_0"><input type="text" placeholder="Answer" maxlength="30"></label>
+                <button disabled class="delete_answer" onclick="deleteAnswer(0)">x</button>
+            </p>
+            <p class="variant">
+                <input type="radio" id="answer_1" name="answer" value="1">
+                <label for="answer_1"><input type="text" placeholder="Answer" maxlength="30"></label>
+                <button disabled class="delete_answer" onclick="deleteAnswer(1)">x</button>
+            </p>
+
+        </div>
+
+        <button id="add_answer">Add answer</button>
+        <button id="submit">Add quiz</button>
+    </main>
+
+    <script src="../static/script/base.js"></script>
+    <script src="../static/script/admin.js"></script>
+</body>
+</html>
